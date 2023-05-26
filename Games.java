@@ -8,6 +8,7 @@ public class Games {
         //getting users input for rows and collums
         int row =keyboard.nextInt();
         int collum =keyboard.nextInt();
+        int tnumber = keyboard.nextInt();
        
 //arrays
 //the starting array(unsolved sudoku)
@@ -39,8 +40,13 @@ Utilities.prn("pleas put in the collum of the 0 you want to change from 1-8");
 } 
 
 public static void switchNumber(int[][] startArray){
-
+    for {
+    startArray[row][collum] = number;
+    System.out.println(startArray[1][2]); // Outputs 9 instead of 7
+    }
     
+    
+
 }
      //This is for printing ot the first array which is the no solved one
     public static void print2DArray(int[][] startArray){
