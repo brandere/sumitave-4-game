@@ -22,7 +22,13 @@ print2DArray(startArray);
         
         for (int i = 0; i < startArray.length; i++) {
             for (int j = 0; j < startArray[i].length; j++) {
-               System.out.print(startArray[i][j] +" ");
+                
+                if(startArray[i][j]==0){
+                    System.out.print(" ");
+                }
+                else{
+               System.out.print(startArray[i][j] +"  ");
+                }
         
         
          }
