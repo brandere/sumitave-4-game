@@ -51,12 +51,12 @@ public class Games {
             // getting users input for rows and collums
             for (int i = 0; i < 2147483647; count++) {
                 Utilities.prn("please in put the row of the 0 you want to change from 0-8");
-                int row = keyboard.nextInt();
+                Scanner fin;
+                int row = Integer.parseInt(keyboard.nextLine());
                 Utilities.prn("pleas put in the collum of the 0 you want to change from 0-8");
-                int collum = keyboard.nextInt();
-                Utilities
-                        .prn("please input the number you want the 0 at the position " + row + " " + collum + " to become");
-                int number = keyboard.nextInt();
+                int collum = Integer.parseInt(keyboard.nextLine());
+                Utilities.prn("please input the number you want the 0 at the position " + row + " " + collum + " to become");
+                int number = Integer.parseInt(keyboard.nextLine());
 
                 startArray[row][collum] = number;
                 Utilities.prn(" if you need to change anouther zero press enter");
