@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Games {
     public static void main(String[] args) {
-       
 
         // arrays
         // the starting array(unsolved sudoku)
@@ -27,7 +26,7 @@ public class Games {
                 { 4, 3, 8, 2, 1, 6, 9, 7, 5 } };
 
         print2DArray(startArray);
-        // switchNumber( startArray);
+        switchNumber(startArray, endArray);
 
     }
 
@@ -45,29 +44,45 @@ public class Games {
 
     }
 
-    public static void switchNumber(int[][] startArray) {
-        Scanner keyboard = new Scanner(System.in);
-        // getting users input for rows and collums
-        Utilities.prn("please in put the row of the 0 you want to change from 0-8");
-        int row = keyboard.nextInt();
-        Utilities.prn("pleas put in the collum of the 0 you want to change from 0-8");
-        int collum = keyboard.nextInt();
-        Utilities.prn("please input the number you want the 0 at the position to become");
-        int number = keyboard.nextInt();
+    // getting collum row and canging the number at that position
+    public static void switchNumber(int[][] startArray, int[][] endArray) {
+        int count = 0;
+        try (Scanner keyboard = new Scanner(System.in)) {
+            // getting users input for rows and collums
+            for (int i = 0; i < 2147483647; count++) {
+                Utilities.prn("please in put the row of the 0 you want to change from 0-8");
+                int row = keyboard.nextInt();
+                Utilities.prn("pleas put in the collum of the 0 you want to change from 0-8");
+                int collum = keyboard.nextInt();
+                Utilities
+                        .prn("please input the number you want the 0 at the position " + row + " " + collum + " to become");
+                int number = keyboard.nextInt();
 
-        startArray[row][collum] = number;
+                startArray[row][collum] = number;
+                Utilities.prn(" if you need to change anouther zero press enter");
+                Utilities.prn(" if you are done press d");
+
+                if (keyboard.nextLine().equals("d")) {
+                    System.exit(0);
+                }
+                promptEnter();
+
+            }
+        }
     }
 
-    public static void gameWin(int[][] startArray, int[][] endArray) {
+    // game win condition
+    public static void gameWin(int[][] startArray, int[][] endArray, int count) {
         if (startArray == endArray) {
-            Utilities.prn("good job you win");
+            Utilities.prn("good job you win it took you" + count + "moves");
         }
 
         else {
-            Utilities.prn("your a looser ha ha ha");
+            Utilities.prn("your a looser ha ha ha, you could not get it after" + count + "moves");
         }
     }
 
+    // make user press enter
     public static void promptEnter() {
         Scanner in = new Scanner(System.in);
         Utilities.prn("press enter to contiue...");
